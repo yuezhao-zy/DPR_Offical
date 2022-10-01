@@ -758,6 +758,7 @@ def main(cfg: DictConfig):
 
     cfg = setup_cfg_gpu(cfg)
     set_seed(cfg)
+    print('cfg',cfg)
 
     if cfg.local_rank in [-1, 0]:
         logger.info("CFG (after gpu  configuration):")

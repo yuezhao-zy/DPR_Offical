@@ -7,7 +7,8 @@ nq_test:
 
 nq_train:
   _target_: dpr.data.retriever_data.CsvQASrc
-  file: data.retriever.qas.nq-train
+#  file: data.retriever.qas.nq-train
+  file: ../../../data/nq-train.tsv
 
 nq_dev:
   _target_: dpr.data.retriever_data.CsvQASrc
@@ -28,6 +29,30 @@ trivia_dev:
 webq_test:
   _target_: dpr.data.retriever_data.CsvQASrc
   file: data.retriever.qas.webq-test
+
+webq_train:
+  _target_: dpr.data.retriever_data.CsvQASrc
+  file: ../../../data/webquestions-train.tsv
+
+webq_dev:
+  _target_: dpr.data.retriever_data.CsvQASrc
+  file: ../../../data/webquestions-dev.tsv
+
+squad1_train:
+  _target_: dpr.data.retriever_data.CsvQASrc
+  file: ../../../data/squad1-train.tsv
+
+squad1_dev:
+  _target_: dpr.data.retriever_data.CsvQASrc
+  file: ../../../data/squad1-dev.tsv
+
+curatedtrec_train:
+  _target_: dpr.data.retriever_data.CsvQASrc
+  file: ../../../data/curatedtrec-train.tsv
+
+curatedtrec_dev:
+  _target_: dpr.data.retriever_data.CsvQASrc
+  file: ../../../data/curatedtrec-dev.tsv
 
 curatedtrec_test:
   _target_: dpr.data.retriever_data.CsvQASrc

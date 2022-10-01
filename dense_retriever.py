@@ -57,7 +57,6 @@ def generate_question_vectors(
     with torch.no_grad():
         for j, batch_start in enumerate(range(0, n, bsz)):
             batch_questions = questions[batch_start : batch_start + bsz]
-
             if query_token:
                 # TODO: tmp workaround for EL, remove or revise
                 if query_token == "[START_ENT]":
@@ -72,8 +71,14 @@ def generate_question_vectors(
                 batch_tensors = [tensorizer.text_to_tensor(q) for q in batch_questions]
 
             # TODO: this only works for Wav2vec pipeline but will crash the regular text pipeline
-            max_vector_len = max(q_t.size(1) for q_t in batch_tensors)
-            min_vector_len = min(q_t.size(1) for q_t in batch_tensors)
+            # print('batch_tensors',batch_tensors)
+            # for qt in batch_tensors:
+            #     print('tq',qt)
+            # max_vector_len = max(q_t.size(1) for q_t in batch_tensors) #TODO
+            # min_vector_len = min(q_t.size(1) for q_t in batch_tensors)
+            #
+            max_vector_len = max(q_t.size() for q_t in batch_tensors)
+            min_vector_len = min(q_t.size() for q_t in batch_tensors)
 
             if max_vector_len != min_vector_len:
                 # TODO: _pad_to_len move to utils

@@ -4,6 +4,10 @@ nq_train:
   _target_: dpr.data.biencoder_data.JsonQADataset
   file: data.retriever.nq-train
 
+nq_train_part:
+  _target_: dpr.data.biencoder_data.JsonQADataset
+  file: ../../../data/biencoder-nq-train_part2.json
+
 nq_train_hn1:
   _target_: dpr.data.biencoder_data.JsonQADataset
   file: data.retriever.nq-adv-hn-train
@@ -11,6 +15,11 @@ nq_train_hn1:
 nq_dev:
   _target_: dpr.data.biencoder_data.JsonQADataset
   file: data.retriever.nq-dev
+
+nq_dev_local:
+  _target_: dpr.data.biencoder_data.JsonQADataset
+  file: ../../../data/biencoder-nq-dev.json
+
 
 trivia_train:
   _target_: dpr.data.biencoder_data.JsonQADataset
@@ -32,9 +41,34 @@ webq_train:
   _target_: dpr.data.biencoder_data.JsonQADataset
   file: data.retriever.webq-train
 
+webq_train_part:
+  _target_: dpr.data.biencoder_data.JsonQADataset
+  file: ../../../data/biencoder-webquestions-train_part2.json
+
+
+curatedtrec_train_part:
+  _target_: dpr.data.biencoder_data.JsonQADataset
+  file: ../../../data/biencoder-curatedtrec-train_part2.json
+
+squad1_train_part:
+  _target_: dpr.data.biencoder_data.JsonQADataset
+  file: ../../../data/biencoder-squad1-train_part2.json
+
 webq_dev:
   _target_: dpr.data.biencoder_data.JsonQADataset
   file: data.retriever.webq-dev
+
+webq_dev_local:
+  _target_: dpr.data.biencoder_data.JsonQADataset
+  file: ../../../data/biencoder-webquestions-dev.json
+
+curatedtrec_dev_local:
+  _target_: dpr.data.biencoder_data.JsonQADataset
+  file: ../../../data/biencoder-curatedtrec-dev.json
+
+squad1_dev_local:
+  _target_: dpr.data.biencoder_data.JsonQADataset
+  file: ../../../data/biencoder-squad1-dev.json
 
 curatedtrec_train:
   _target_: dpr.data.biencoder_data.JsonQADataset
@@ -43,3 +77,11 @@ curatedtrec_train:
 curatedtrec_dev:
   _target_: dpr.data.biencoder_data.JsonQADataset
   file: data.retriever.curatedtrec-dev
+
+trivia_train_part:
+  _target_: dpr.data.biencoder_data.JsonQADataset
+  file: ../../../data/biencoder-trivia-train_part2.json
+
+trivia_dev_local:
+  _target_: dpr.data.biencoder_data.JsonQADataset
+  file: ../../../data/biencoder-trivia-dev.json
